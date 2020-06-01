@@ -1,0 +1,13 @@
+C:\Users\Yozika\Desktop\New folder\Praksa_oop\Praksa_oop\bin\Debug\netcoreapp3.1\Praksa_oop.exe
+C:\Users\Yozika\Desktop\New folder\Praksa_oop\Praksa_oop\bin\Debug\netcoreapp3.1\Praksa_oop.deps.json
+C:\Users\Yozika\Desktop\New folder\Praksa_oop\Praksa_oop\bin\Debug\netcoreapp3.1\Praksa_oop.runtimeconfig.json
+C:\Users\Yozika\Desktop\New folder\Praksa_oop\Praksa_oop\bin\Debug\netcoreapp3.1\Praksa_oop.runtimeconfig.dev.json
+C:\Users\Yozika\Desktop\New folder\Praksa_oop\Praksa_oop\bin\Debug\netcoreapp3.1\Praksa_oop.dll
+C:\Users\Yozika\Desktop\New folder\Praksa_oop\Praksa_oop\bin\Debug\netcoreapp3.1\Praksa_oop.pdb
+C:\Users\Yozika\Desktop\New folder\Praksa_oop\Praksa_oop\obj\Debug\netcoreapp3.1\Praksa_oop.csprojAssemblyReference.cache
+C:\Users\Yozika\Desktop\New folder\Praksa_oop\Praksa_oop\obj\Debug\netcoreapp3.1\Praksa_oop.AssemblyInfoInputs.cache
+C:\Users\Yozika\Desktop\New folder\Praksa_oop\Praksa_oop\obj\Debug\netcoreapp3.1\Praksa_oop.AssemblyInfo.cs
+C:\Users\Yozika\Desktop\New folder\Praksa_oop\Praksa_oop\obj\Debug\netcoreapp3.1\Praksa_oop.csproj.CoreCompileInputs.cache
+C:\Users\Yozika\Desktop\New folder\Praksa_oop\Praksa_oop\obj\Debug\netcoreapp3.1\Praksa_oop.dll
+C:\Users\Yozika\Desktop\New folder\Praksa_oop\Praksa_oop\obj\Debug\netcoreapp3.1\Praksa_oop.pdb
+C:\Users\Yozika\Desktop\New folder\Praksa_oop\Praksa_oop\obj\Debug\netcoreapp3.1\Praksa_oop.genruntimeconfig.cache

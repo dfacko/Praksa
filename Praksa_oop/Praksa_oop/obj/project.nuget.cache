@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "WhzXOQ2Q4MVPJOiGyN1SJuxjU+rNj+f2whDZvOm10NwFL44N+e1gMGlF0j/3hPk95I5DQ5B5+FmruV6lCwNi6A==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Yozika\\Desktop\\New folder\\Praksa_oop\\Praksa_oop\\Praksa_oop.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Yozika\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.2\\microsoft.aspnetcore.app.ref.3.1.2.nupkg.sha512"
+  ],
+  "logs": []
+}
