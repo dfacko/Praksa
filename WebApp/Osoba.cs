@@ -9,13 +9,14 @@ namespace WebApp
 	{ 
 		public string Name { get; set; }
 		public int Age { get; set; }
-		//public string prezime { get; set; }
+		public string Surname { get; set; }
 
 
-		public  Osoba(string name,int age)
+		public  Osoba(string name,string prezime,int age)
 		{
 			this.Name = name;
 			this.Age = age;
+			this.Surname = prezime;
 		}
 
 	}

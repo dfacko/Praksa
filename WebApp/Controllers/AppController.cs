@@ -14,7 +14,6 @@ namespace WebApp.Controllers
     {
 
         static List<Osoba> popis = new List<Osoba>() { };
-        static List<string> strings = new List<string>() { "jedan", "dva", "tri" };
 
 
 
@@ -34,45 +33,38 @@ namespace WebApp.Controllers
             }
 
         
-            /* public List<Osoba> Get()
-            {
-
-            return popis;
-            }
-
-            public string Get(int id)
-            {
-                return "value";
-            }*/
+     
 
             [HttpPost]
             public IHttpActionResult Post([FromBody] Osoba person)
             {
-
+            if (person == null) {
+                return BadRequest();
+                }
             popis.Add(person);
             return Ok();
             }
 
             [HttpPost]
-            public HttpResponseMessage Post([FromUri]string name,int age)
+            public HttpResponseMessage Post([FromUri]string name,string prezime,int age)
             {
 
-            strings.Add(name);
 
-            Osoba newPerson = new Osoba(name,age);
-            popis.Add(new Osoba(name,age)); 
+            Osoba newPerson = new Osoba(name,prezime,age);
+            popis.Add(new Osoba(name,prezime,age)); 
 
             return Request.CreateResponse(HttpStatusCode.OK);
             }
 
             [HttpPut]
-            public IHttpActionResult Put(string name, string newName, int newAge)
+            public IHttpActionResult Put(string name,string surname, string newName,string newSurname, int newAge)
             {
                 foreach(var person in popis)
 			    {
-                if (person.Name == name) {
+                if (person.Name == name && person.Surname==surname) {
                     person.Name = newName;
                     person.Age = newAge;
+                    person.Surname = newSurname;
                     return Ok();
                 }
 
