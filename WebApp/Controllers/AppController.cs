@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Security.Cryptography.X509Certificates;
 using System.Web;
 using System.Web.DynamicData.ModelProviders;
 using System.Web.Http;
@@ -13,15 +15,17 @@ namespace WebApp.Controllers
     public class AppController : ApiController
     {
 
-        static List<Osoba> popis = new List<Osoba>() { };
-
-
+              List<Osoba> popis = new List<Osoba>() { };
+            SqlConnection connection = new SqlConnection("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=PraksaDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+ 
 
         // GET: api/App
             [HttpGet]
             public IHttpActionResult Get()
             {
+            Reader reader = new Reader();
 
+                popis=reader.HasRows(connection);
                 if (popis.Count == 0)
                 {
                     return NotFound();
@@ -38,53 +42,41 @@ namespace WebApp.Controllers
             [HttpPost]
             public IHttpActionResult Post([FromBody] Osoba person)
             {
+           
             if (person == null) {
                 return BadRequest();
                 }
-            popis.Add(person);
+            DataInsert.AddToDb(connection, person);
+                   
             return Ok();
             }
 
-            [HttpPost]
-            public HttpResponseMessage Post([FromUri]string name,string prezime,int age)
-            {
 
 
-            Osoba newPerson = new Osoba(name,prezime,age);
-            popis.Add(new Osoba(name,prezime,age)); 
-
-            return Request.CreateResponse(HttpStatusCode.OK);
-            }
 
             [HttpPut]
-            public IHttpActionResult Put(string name,string surname, string newName,string newSurname, int newAge)
+            public IHttpActionResult Put(int id,string newName="",string newSurname="",int newAge=-1)
             {
-                foreach(var person in popis)
-			    {
-                if (person.Name == name && person.Surname==surname) {
-                    person.Name = newName;
-                    person.Age = newAge;
-                    person.Surname = newSurname;
-                    return Ok();
-                }
 
-			    }
-                return NotFound();
+
+            int status=DataEdit.Edit(connection,id, newName, newSurname, newAge);
+
+            if (status == 0) { 
+                return NotFound(); 
+                }
+			
+                return Ok();
+			
 
 
             }
             
             [HttpDelete]
-            public IHttpActionResult Delete([FromBody]string name)
+            public IHttpActionResult Delete([FromBody]int id)
             {
-                foreach(var person in popis){
-                    if (person.Name == name) {
-                        popis.Remove(person);
-                        return Ok();
-                    }
 
-			    }
-                return BadRequest();
+            DataDelete.Delete(connection, id);
+            return Ok();
                 
             }
         

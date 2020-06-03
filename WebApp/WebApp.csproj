@@ -85,6 +85,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="DataDelete.cs" />
+    <Compile Include="DataEdit.cs" />
+    <Compile Include="DataInsert.cs" />
+    <Compile Include="DataReader.cs" />
     <Compile Include="Osoba.cs" />
     <Compile Include="Controllers\AppController.cs" />
     <Compile Include="Global.asax.cs">
